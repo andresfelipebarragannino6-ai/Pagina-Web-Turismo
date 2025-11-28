@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada | Blog de Viajes</title>
+    
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./colombia.css">
+    </head>
+    <body>
+    <header class="encabezado__container">
+        <div class="encabezado">
+            <a class="encabezado__logo" title="Página principal de Jornada">
+                <img class="encabezado__logo--icono" alt="Logo de Jornada, blog de viajes y turismo"
+                    src="./img/logoprovisriablanca-1@2x.png" loading="lazy" />
+            </a>
+            <nav class="encabezado__navegacion">
+                <ul class="encabezado__navegacion--lista">
+                    <li class="encabezado__navegacion--elemento">
+                        <a href="./index.html" aria-label="Ir al inicio">Inicio</a>
+                    </li>
+                    <li class="encabezado__navegacion--elemento submenu">
+                            <a href="javascript:void(0)" class="submenu__boton" aria-label="Menú Blog">Blog</a>
+                        <ul class="submenu__lista">
+                            <li><a href="./blog_japon.html">Blog Japón</a></li>
+                            <li><a href="./blog_colombia.html">Blog Colombia</a></li>
+                        </ul>
+                        </li>
+                    <li class="encabezado__navegacion--elemento submenu">
+                            <a href="javascript:void(0)" class="submenu__boton" aria-label="Menú Destinos">Paquetes de viaje</a>
+                        <ul class="submenu__lista">
+                            <li><a href="./paquetes_viaje_japon.html">Paquete Japón</a></li>
+                            <li><a href="./paquetes_viaje_colombia.html">Paquete Colombia</a></li>
+                        </ul>
+                        </li>
+                    <li class="encabezado__navegacion--elemento">
+                        <a href="./contacto.html" aria-label="Enlace de contacto para consultas">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<section class="contenedor">
+    <div class="contenedor__wrapper">
+        <figure class="contenedor__img--wrapper">
+            <img class="contenedor__img" alt="Paquetes de Colombia" src="./img/Paquete Colombia.png" />
+            <div class="linea-roja"></div>
+        </figure>
+    </div>
+    <section class="paquetes-section">
+
+    <h2>Elige tus ciudades y calcula tu paquete</h2>
+
+    <form id="form-paquetes" class="form-paquetes">
+        <label>Días de estadía:
+            <input type="number" id="dias" min="1" required>
+        </label>
+
+        <label>Número de personas:
+            <input type="number" id="personas" min="1" required>
+        </label>
+    </form>
+
+    <!-- TARJETAS DE CIUDADES -->
+    <div class="ciudades-container">
+
+        <div class="city-card">
+            <img src="./img/Ciudad de Bucaramanga.png">
+            <h3>Bucaramanga</h3>
+            <p>Ciudad moderna, deliciosa gastronomía y cultura vibrante.</p>
+            <input type="checkbox" class="city-check" value="Bucaramanga"> Seleccionar
+        </div>
+
+        <div class="city-card">
+            <img src="./img/Ciudad de Barranquilla.png">
+            <h3>Barranquilla</h3>
+            <p>Historia, fútbol y una gastronomía única.</p>
+            <input type="checkbox" class="city-check" value="Barranquilla"> Seleccionar
+        </div>
+
+        <div class="city-card">
+            <img src="./img/Gato de Tejada.jpg">
+            <h3>Cali</h3>
+            <p>Bailes y cultura vibrante.</p>
+            <input type="checkbox" class="city-check" value="Cali"> Seleccionar
+        </div>
+
+    </div>
+    <!-- SECCIÓN DE PAQUETES -->
+    <div class="ciudad-container">
+
+        <div class="ciudad-box">
+            <h3>Bucaramanga</h3>
+            <button class="btn-paquete" onclick="elegirPaquete('Bucaramanga','alta')">Paquete Alto</button>
+            <button class="btn-paquete" onclick="elegirPaquete('Bucaramanga','media')">Paquete Medio</button>
+            <button class="btn-paquete" onclick="elegirPaquete('Bucaramanga','baja')">Paquete Bajo</button>
+            <p id="sel-Bucaramanga" class="seleccion-text"></p>
+        </div>
+
+        <div class="ciudad-box">
+            <h3>Barranquilla</h3>
+            <button class="btn-paquete" onclick="elegirPaquete('Barranquilla','alta')">Paquete Alto</button>
+            <button class="btn-paquete" onclick="elegirPaquete('Barranquilla','media')">Paquete Medio</button>
+            <button class="btn-paquete" onclick="elegirPaquete('Barranquilla','baja')">Paquete Bajo</button>
+            <p id="sel-Barranquilla" class="seleccion-text"></p>
+        </div>
+
+        <div class="ciudad-box">
+            <h3>Cali</h3>
+            <button class="btn-paquete" onclick="elegirPaquete('Cali','alta')">Paquete Alto</button>
+            <button class="btn-paquete" onclick="elegirPaquete('Cali','media')">Paquete Medio</button>
+            <button class="btn-paquete" onclick="elegirPaquete('Cali','baja')">Paquete Bajo</button>
+            <p id="sel-Cali" class="seleccion-text"></p>
+        </div>
+
+    </div>
+
+    <button class="btn-calcular" onclick="calcularPaquete()">Calcular paquete</button>
+
+    <div id="resultado"></div>
+</section>
+<script>
+let paqueteElegido = {};
+
+function elegirPaquete(ciudad, tipo) {
+    paqueteElegido[ciudad] = tipo;
+    document.getElementById("sel-" + ciudad).innerText =
+        "Seleccionaste paquete: " + tipo.toUpperCase();
+}
+
+
+function calcularPaquete() {
+
+    const dias = parseInt(document.getElementById("dias").value);
+    const personas = parseInt(document.getElementById("personas").value);
+
+    const checks = document.querySelectorAll(".city-check:checked");
+    const ciudadesSeleccionadas = Array.from(checks).map(c => c.value);
+
+    const preciosPorPaquete = {
+        "Bucaramanga":     { alta: 150, media: 110, baja: 80 },
+        "Barranquilla":    { alta: 130, media: 95, baja: 70 },
+        "Cali":            { alta: 120, media: 90, baja: 60 }
+    };
+
+    const salida = document.getElementById("resultado");
+    salida.innerHTML = "";
+
+    if (!dias || !personas) {
+        alert("Por favor ingresa días y personas.");
+        return;
+    }
+
+    if (ciudadesSeleccionadas.length === 0) {
+        alert("Seleccione al menos una ciudad.");
+        return;
+    }
+
+    let costoTotal = 0;
+
+    for (let ciudad of ciudadesSeleccionadas) {
+
+        if (!paqueteElegido[ciudad]) {
+            alert(`Debes seleccionar un paquete para ${ciudad}`);
+            return;
+        }
+
+        const tipoPaquete = paqueteElegido[ciudad];
+        const precioBase = preciosPorPaquete[ciudad][tipoPaquete];
+
+        costoTotal += precioBase * dias * personas;
+    }
+
+    let mensajes = "";
+
+    if (personas >= 2) {
+        const desc30 = costoTotal * 0.30;
+        costoTotal -= desc30;
+        mensajes += `<div class="alerta-descuento">✔ Descuento 30% por 2 o más personas.</div>`;
+    }
+
+    if (ciudadesSeleccionadas.length === 3) {
+        const desc5 = costoTotal * 0.05;
+        costoTotal -= desc5;
+        mensajes += `<div class="alerta-descuento">✔ Descuento 5% por visitar las 3 ciudades.</div>`;
+    }
+
+    const precioBaseFinal = costoTotal;
+
+    window.mostrarPago = function(tipo) {
+        let precioFinal = precioBaseFinal;
+        let titulo = "";
+        let nota = "";
+
+        const infoInteres = `
+            <p style="font-size:13px; margin-top:10px; color:#444;">
+            💡 Información: tasa del 1.2% mensual por crédito.
+            </p>
+        `;
+
+        if (tipo === "efectivo") {
+            titulo = "Pago en efectivo";
+        }
+
+        if (tipo === "credito") {
+            titulo = "Pago de contado en crédito";
+
+            if (precioFinal >= 3000) {
+                precioFinal *= 0.95;
+                nota = "<small>✔ Se aplicó el 5% de descuento</small>";
+            } else {
+                nota = "<small>✘ No aplica el descuento (menos de 3000 USD)</small>";
+            }
+
+            nota += infoInteres;
+        }
+
+        document.getElementById("precio-pago").innerHTML = `
+            <h3>${titulo}</h3>
+            <h2>USD ${precioFinal.toLocaleString()}</h2>
+            ${nota}
+        `;
+    };
+
+    salida.innerHTML = `
+        ${mensajes}
+        <div class="resultado-card">
+            <h3>Paquete seleccionado</h3>
+
+            <p><strong>Ciudades:</strong> ${ciudadesSeleccionadas.join(" + ")}</p>
+            <p><strong>Días:</strong> ${dias}</p>
+            <p><strong>Personas:</strong> ${personas}</p>
+
+            <p class="precio">
+                Precio total base:
+                <span>USD ${precioBaseFinal.toLocaleString()}</span>
+            </p>
+
+            <hr>
+
+            <h3>Opciones de pago</h3>
+
+            <button onclick="mostrarPago('efectivo')" class="btn-efectivo">
+                Pago en efectivo
+            </button>
+
+            <button onclick="mostrarPago('credito')" class="btn-credito">
+                Pago de contado en crédito
+            </button>
+
+            <div id="precio-pago"></div>
+        </div>
+    `;
+}
+</script>
+<footer class="footer__container">
+        <div class="footer">
+            <div class="footer__logo-container">
+                <img class="footer__logo-icon" alt="" src="./img/logobranco-1@2x.png" />
+                <div class="footer__info-container">
+                    <div class="footer__text-info">
+                        Horario de atendimiento: 08h - 20h (Lunes a Sábado)                    </div>
+                    <div class="footer__text-info">
+                        Desarrollado por Andrés Felipe Barragán Niño con Alura Latam. Proyecto fictício sin fines comerciales.                    </div>
+                </div>
+            </div>
+            <div class="footer__social-media-container">
+                <div class="footer__social-media-text">Accede a nuestras redes sociales:</div>
+                <div class="footer__social-media-icons">
+                    <a href="">
+                        <img class="footer__social-media-icon" alt="" src="./img/whatsapp-1.svg" />
+                    </a>
+                    <a href="">
+                        <img class="footer__social-media-icon" alt="" src="./img/instragam-1.svg" />
+                    </a>
+                    <a href="">
+                        <img class="footer__social-media-icon" alt="" src="./img/twiter-1.svg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

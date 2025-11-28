@@ -1,0 +1,464 @@
+.encabezado__container {    
+    background: var(--negro);
+    width: 100%;
+    padding: 40px 0;
+
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.encabezado__logo--icono {
+    max-width: 260px;
+}
+
+
+.encabezado__navegacion--lista {
+    display: flex;
+    color: white;
+    gap: 40px;
+    list-style-type: none;
+}
+
+
+
+.encabezado__navegacion--elemento a {
+    color: var(--blanco);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0%;
+
+}
+/* --- Imagen principal y textos superpuestos --- */
+.contenedor__img--wrapper { 
+    margin: 0;
+    position: relative; /* Necesario para posicionar el texto dentro */
+}
+
+.contenedor__img {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+}
+
+/* Título principal */
+.contenedor__img--wrapper::before {
+    content: "¡Ponte en contacto!";
+    position: absolute;
+    top: 35%; /* Centrado verticalmente */
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    z-index: 10;      /* Asegura que esté al frente de la imagen */
+}
+
+/* Texto secundario */
+.contenedor__img--wrapper::after {
+    content: "¿Dudas, sugerencias por problemas por resolver? ¡Tenemos un equipo de guardia para ayudarte!";
+    position: absolute;
+    top: calc(35% + 1.4cm); /* Un poco más abajo del título */
+    left: 8%;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    max-width: 550px;
+    text-align: left;
+    white-space: pre-line; /* Respeta los saltos de línea (\A) */
+}
+
+/* Línea roja decorativa */
+.contenedor__img--wrapper .linea-roja {
+    position: absolute;
+    top: calc(35% + 1cm); /* Entre el título y el texto */
+    left: 8%;
+    width: 200px;
+    height: 3px;
+    background-color: #B81515;
+}
+/* ====== Título principal ====== */
+.tokio__titulo {
+  color: var(--grafito, #333);
+  font-size: 29px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* Línea roja debajo del título */
+.tokio__titulo--subrayado {
+  width: 200px;
+  height: 4px;
+  background-color: red;
+  margin: 0.4cm auto 40px auto; /* separación de 4 cm con el título */
+  border-radius: 2px;
+}
+
+.wrap{
+  width:100%;
+  max-width:var(--container-w);
+}
+
+/* ← AQUÍ SE APLICAN LOS 5 CM Y EL CENTRADO */
+.intro{
+  text-align:center;
+  color:#666;
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:28px;
+
+  /* NUEVO: separación de 5 cm a cada lado */
+  margin-left:5cm;
+  margin-right:5cm;
+}
+:root{
+  --accent: #b71c1c;
+  --muted: #9e9e9e;
+  --line: #dcdcdc;
+  --text: #333;
+}
+
+/* SEPARACIÓN DE 5 CM A CADA LADO */
+.card{
+  padding:34px;
+  background:transparent;
+  margin-left:5cm;
+  margin-right:5cm;
+}
+
+form{
+  width:100%;
+}
+
+.field{
+  margin-bottom:20px;
+}
+
+.label{
+  display:block;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+/* Inputs generales */
+input[type="text"],
+input[type="email"],
+textarea{
+  width:100%;
+  padding:10px 6px;
+  border:0;
+  border-bottom:1px solid var(--line);
+  outline:none;
+  font-size:15px;
+  background:transparent;
+  transition:border-color .25s ease-in-out;
+}
+
+/* 🔥 ANIMACIÓN PARA NOMBRE */
+#nombre:focus,
+#nombre:not(:placeholder-shown){
+  border-bottom-color: var(--accent);
+}
+
+/* Contenedor en línea */
+.campos-linea {
+  display: flex;
+  gap: 100px;
+}
+
+/* Inputs de Teléfono y Correo */
+.input-linea{
+  width:100%;
+  padding:10px 6px;
+  border:0;
+  border-bottom:1px solid var(--line);
+  outline:none;
+  font-size:15px;
+  background:transparent;
+  transition:border-color .25s ease-in-out;
+}
+
+/* 🔥 Animación para teléfono y correo */
+#telefono:focus,
+#telefono:not(:placeholder-shown),
+#correo:focus,
+#correo:not(:placeholder-shown){
+  border-bottom-color: var(--accent);
+}
+
+/* 🔥 ANIMACIÓN PARA TEMA */
+#tema1:focus,
+#tema1:not(:placeholder-shown){
+  border-bottom-color: var(--accent);
+}
+
+/* 🔥 ANIMACIÓN PARA DESCRIPCIÓN (textarea) */
+#mensaje:focus,
+#mensaje:not(:placeholder-shown){
+  border-bottom-color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .campos-linea {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    margin-left: 1cm;
+    margin-right: 1cm;
+  }
+
+  .intro {
+    margin-left: 1cm;
+    margin-right: 1cm;
+  }
+}
+
+/* Botón */
+.btn-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:18px;
+}
+
+.btn{
+  background:var(--accent);
+  color:white;
+  border:0;
+  padding:12px 36px;
+  border-radius:8px;
+  font-size:15px;
+  cursor:pointer;
+  transition:opacity .12s, transform .12s;
+}
+.campos-linea {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+    gap: 40px; /* puedes ajustar si quieres separar más */
+    align-items: center; /* centra verticalmente */
+}
+
+.imagen-col {
+    display: flex;
+    justify-content: center;  /* ✔ Centra la imagen */
+    margin-top: 1cm;   /* ✔ Baja la imagen 1 cm */
+}
+
+.imagen-col img {
+    width: 50%;        /* ✔ Más pequeña */
+    max-width: 100px;  /* ✔ Controla el tamaño máximo */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#mensaje-enviado {
+    display: none;
+    text-align: center;
+    background: #e6f9e6;
+    color: #0b7a0b;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 25px;
+    width: 100%;
+    border: 2px solid #8ddf8d;
+    opacity: 0; /* necesario para fade-out */
+}
+/* IMAGEN INFERIOR */
+.imagen-inferior img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.footer__container {
+    background: var(--negro);
+    width: 100%;
+    padding: 40px 0;
+    margin-top: -4px;
+}
+
+.footer {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--blanco, #FFF);
+}
+
+.footer__logo-icon {
+    max-width: 160px;
+    margin-bottom: 16px;
+}
+
+.footer__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer__text-info {
+    color: var(--neutral-c, #F5F5F5);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+}
+
+.footer__social-media-container {
+    text-align: center;
+}
+
+.footer__social-media-text {
+    color: var(--neutral-c, #F5F5F5);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+/* ----- Submenú del Blog ----- */
+.submenu {
+    position: relative;
+}
+
+.submenu__boton {
+    cursor: pointer;
+}
+
+.submenu__lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 0;
+    list-style: none;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 180px;
+    z-index: 999;
+}
+
+.submenu__lista li {
+    padding: 8px 20px;
+}
+
+.submenu__lista li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+}
+
+.submenu__lista li a:hover {
+    background: #f2f2f2;
+}
+
+/* Show on hover */
+.submenu:hover .submenu__lista {
+    display: block;
+}
+@media (max-width: 768px) {
+  .encabezado__container { padding: 16px 0; }
+  .encabezado { flex-direction: column; gap: 16px; height: auto; padding: 0 16px; }
+  .encabezado__logo--icono { max-width: 180px; }
+  .encabezado__navegacion--lista { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .encabezado__navegacion--elemento a { font-size: 18px; }
+}
+@media (max-width: 768px) {
+
+  /* Título "Blog de Japón" más pequeño */
+  .contenedor__img--wrapper::before { 
+      font-size: 18px; /* 🔽 reducido */
+  }
+
+  /* Texto secundario más pequeño */
+  .contenedor__img--wrapper::after { 
+      font-size: 13px; /* 🔽 reducido */
+      line-height: 1.35;
+  }
+
+}
+@media (max-width: 768px) {
+    .contenedor__img[alt="Personas viendo el computador"] {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: scale(1.4);
+        transform-origin: center top;
+    }
+}
+/* --- Ajustes solo para móviles --- */
+@media (max-width: 768px) {
+
+    /* Ocultar la imagen decorativa */
+    .imagen-col {
+        display: none;
+    }
+
+    /* Hacer más largo el botón */
+    .btn-wrap .btn {
+        width: 100%;           /* Ocupa todo el ancho disponible */
+        padding: 12px 0;       /* Más alto y cómodo de tocar */
+        font-size: 1rem;
+    }
+
+    /* Extender las líneas de teléfono y correo */
+    .campos-linea .input-linea {
+        width: 100%;           /* Ocupa todo el ancho de la columna */
+        box-sizing: border-box; /* Evita que el padding rompa el ancho */
+    }
+
+    /* Opcional: ajustar el contenedor de columnas para que se apilen */
+    .campos-linea {
+        flex-direction: column; /* Una columna debajo de la otra */
+        gap: 16px;              /* Espaciado entre campos */
+    }
+}
+/* Ajustes solo para móviles */
+@media (max-width: 768px) {
+    /* Reducir tamaño de los textos del footer */
+    .footer__text-info,
+    .footer__social-media-text {
+        font-size: 12px; /* Ajusta según prefieras */
+    }
+
+    /* Reducir tamaño del logo del footer */
+    .footer__logo-icon {
+        width: 80px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+    }
+
+    /* Reducir tamaño de los íconos de redes sociales */
+    .footer__social-media-icon {
+        width: 24px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+        margin-right: 8px; /* Opcional: espacio entre íconos */
+    }
+
+    /* Ajuste general del contenedor para no saturar espacio */
+    .footer__container {
+        padding: 12px;
+    }
+}
