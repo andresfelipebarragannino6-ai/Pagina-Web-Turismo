@@ -1,0 +1,304 @@
+/* --- Imagen principal y textos superpuestos --- */
+.contenedor__img--wrapper { 
+    margin: 0;
+    position: relative; /* Necesario para posicionar el texto dentro */
+}
+
+.contenedor__img {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+}
+
+/* Título principal sobre la imagen */
+.contenedor__img--wrapper::before {
+    content: "Osaka";
+    position: absolute;
+    top: 50%;                     /* Centrado verticalmente */
+    left: 50%;                    /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Centrado exacto */
+    color: white;
+    font-size: 80px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    z-index: 10;      /* Asegura que esté al frente de la imagen */
+}
+/* ====== Sección Osaka ====== */
+.osaka {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+
+.osaka__titulo {
+  font-size: 2.2em;
+  color: #b81515;
+  border-bottom: 3px solid #b81515;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.osaka__texto {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+.card__boton {
+  background-color: #b81515;
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card__boton:hover {
+  background-color: #8e1010;
+}
+
+/* ====== Detalles de Osaka ====== */
+.osaka__detalles {
+  background-color: #fff;
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+.osaka__subtitulo {
+  color: #b81515;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.osaka__contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+.osaka__texto--bloque {
+  flex: 1 1 400px;
+  font-size: 1.05em;
+  color: #444;
+  line-height: 1.6em;
+}
+
+.osaka__img--bloque {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.osaka__img {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ====== Galería ====== */
+.osaka__galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.osaka__galeria-img {
+  width: 30%;
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* ====== Plan de Pagos ====== */
+.osaka__plan {
+  margin-top: 50px;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.osaka__plan h3 {
+  color: #b81515;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.osaka__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.osaka__form label {
+  font-weight: bold;
+}
+
+.osaka__form select,
+.osaka__form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.osaka__boton {
+  background-color: #b81515;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.osaka__boton:hover {
+  background-color: #8e1010;
+}
+
+.osaka__resultado {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #222;
+  font-weight: bold;
+}
+/* ----- Submenú del Blog ----- */
+.submenu {
+    position: relative;
+}
+
+.submenu__boton {
+    cursor: pointer;
+}
+
+.submenu__lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 0;
+    list-style: none;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 180px;
+    z-index: 999;
+}
+
+.submenu__lista li {
+    padding: 8px 20px;
+}
+
+.submenu__lista li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+}
+
+.submenu__lista li a:hover {
+    background: #f2f2f2;
+}
+
+/* Show on hover */
+.submenu:hover .submenu__lista {
+    display: block;
+}
+@media (max-width: 768px) {
+  .encabezado__container { padding: 16px 0; }
+  .encabezado { flex-direction: column; gap: 16px; height: auto; padding: 0 16px; }
+  .encabezado__logo--icono { max-width: 180px; }
+  .encabezado__navegacion--lista { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .encabezado__navegacion--elemento a { font-size: 18px; }
+
+  .contenedor__img--wrapper::before { font-size: 28px; top: 28%; left: 6%; }
+  .contenedor__img--wrapper::after { font-size: 16px; line-height: 1.4; top: calc(28% + 1.2cm); left: 6%; max-width: 90%; }
+  .contenedor__img--wrapper .linea-roja { top: calc(28% + 0.8cm); left: 6%; width: 140px; }
+
+  .tokio__contenido { flex-direction: column; align-items: center; gap: 16px; max-width: 100%; padding: 0 16px; }
+  .tokio__imagen--wrapper { margin-right: 0; }
+  .tokio__imagen { width: 100%; max-width: 560px; }
+  .tokio__titulo { font-size: 24px; margin-top: 40px; }
+  .tokio__titulo--subrayado { width: 160px; }
+
+  .tokio__acomodaciones { max-width: 100%; margin: 32px auto; padding: 0 16px; }
+  .acomodaciones__imagen { height: 200px; margin-left: 0; }
+  .acomodaciones__pie { width: 100%; margin-left: 0; }
+
+  .tokio__experiencia { max-width: 100%; margin: 40px auto; padding: 0 16px; }
+  .experiencia__titulo { font-size: 18px; }
+  .experiencia__texto { font-size: 14px; line-height: 1.6; }
+
+  .tokio__recomendaciones { max-width: 100%; margin: 48px auto; padding: 0 16px; }
+  .recomendaciones__titulo { font-size: 24px; }
+  .recomendaciones__subrayado { width: 160px; }
+
+  .card-container { flex-direction: column; gap: 16px; max-width: 100%; padding: 0 16px; }
+  .card { min-width: auto; }
+  .card__imagen-wrapper { height: 180px; }
+  .card__titulo { font-size: 20px; }
+  .card__texto { font-size: 14px; }
+
+  .footer { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 16px; }
+  .footer__logo-icon { max-width: 140px; }
+}
+@media (max-width: 768px) {
+  .contenedor__img--wrapper::before {
+      top: calc(50% + 0.1cm) !important;      /* sigue bajado 1 cm */
+      left: calc(50% - 0.3cm) !important;     /* 🔥 se mueve 1 cm a la izquierda */
+      transform: translate(-50%, -50%) !important;
+      text-align: center !important;
+  }
+}
+@media (max-width: 768px) {
+    .contenedor__img[alt="Ciudad de Osaka"] {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: scale(1.8);
+        transform-origin: center top;
+    }
+}
+
+/* Ajuste para móviles dentro de tu @media ya existente */
+@media (max-width: 768px) {
+    .contenedor__img--wrapper::before {
+        font-size: 40px;        /* Ajuste del tamaño en móvil */
+        top: 50%;               /* Mantiene centrado vertical base */
+        transform: translate(-50%, -50%); /* Centrado exacto */
+        margin-top: 1.3cm;        /* Baja 2 cm solo en móvil */
+    }
+}
+/* Ajustes solo para móviles */
+@media (max-width: 768px) {
+    /* Reducir tamaño de los textos del footer */
+    .footer__text-info,
+    .footer__social-media-text {
+        font-size: 12px; /* Ajusta según prefieras */
+    }
+
+    /* Reducir tamaño del logo del footer */
+    .footer__logo-icon {
+        width: 80px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+    }
+
+    /* Reducir tamaño de los íconos de redes sociales */
+    .footer__social-media-icon {
+        width: 24px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+        margin-right: 8px; /* Opcional: espacio entre íconos */
+    }
+
+    /* Ajuste general del contenedor para no saturar espacio */
+    .footer__container {
+        padding: 12px;
+    }
+}

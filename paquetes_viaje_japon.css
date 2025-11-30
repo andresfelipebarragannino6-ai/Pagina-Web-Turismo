@@ -1,0 +1,476 @@
+/* --- Imagen principal y textos superpuestos --- */
+.contenedor__img--wrapper { 
+    margin: 0;
+    position: relative; /* Necesario para posicionar el texto dentro */
+}
+
+/* Título principal */
+.contenedor__img--wrapper::before {
+    content: "¡Descubre Japón!";
+    position: absolute;
+    top: 35%; /* Centrado verticalmente */
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    z-index: 10;      /* Asegura que esté al frente de la imagen */
+}
+/* Línea roja decorativa */
+.contenedor__img--wrapper .linea-roja {
+    position: absolute;
+    top: calc(35% + 1cm); /* Entre el título y el texto */
+    left: 8%;
+    width: 200px;
+    height: 3px;
+    background-color: #B81515;
+}
+/* Texto secundario */
+.contenedor__img--wrapper::after {
+    content: "¡Jornada tiene el paquete perfecto para tu estilo y presupuesto! \A ¡Descubre los hermosos paisajes y la cultura milenaria de este hermoso país!";
+    position: absolute;
+    top: calc(35% + 1.4cm); /* Un poco más abajo del título */
+    left: 8%;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    max-width: 550px;
+    text-align: left;
+    white-space: pre-line; /* Respeta los saltos de línea (\A) */
+}
+/* ====== Título principal ====== */
+.tokio__titulo {
+  color: var(--grafito, #333);
+  font-size: 29px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 80px;
+}
+/* Línea roja debajo del título */
+.tokio__titulo--subrayado {
+  width: 200px;
+  height: 4px;
+  background-color: red;
+  margin: 0.4cm auto 40px auto; /* separación de 4 cm con el título */
+  border-radius: 2px;
+}
+/* CONTENEDOR GENERAL PARA ALINEAR AMBAS TARJETAS */
+.card-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espacio entre Tokio y Osaka */
+}
+
+/* ESTILO UNIFICADO PARA AMBAS TARJETAS */
+.card {
+    width: 500px;           /* MISMAS DIMENSIONES */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+/* IMÁGENES IGUALADAS */
+.card img {
+    width: 100%;
+    display: block;
+    height: 300px;          /* Mantiene proporciones idénticas */
+    object-fit: cover;      /* Recorta sin deformar */
+}
+
+/* CONTENIDO */
+.card-content {
+    padding: 15px;
+}
+
+/* TITULO */
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPCIÓN */
+.card-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.card-button {
+    display: block;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #a51c1c;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #8f1717;
+}
+.section {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Columna izquierda */
+.text-box {
+    width: 35%;
+}
+
+.text-box h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.text-box h2 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.text-box p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    width: 90%;
+}
+
+/* Columna derecha: Grid imágenes */
+.image-grid {
+    width: 65%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Imagen inferior más ancha */
+.image-grid .wide {
+    grid-column: span 2;
+    height: 250px;
+}
+.testimonios-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* CONTENEDOR DE TESTIMONIOS */
+.testimonios-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto 60px auto;
+    gap: 40px;
+}
+
+/* TARJETA INDIVIDUAL */
+.testimonio {
+    flex: 1;
+    text-align: left;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* USUARIO */
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.usuario img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.usuario h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.stars {
+    color: #D80000;
+    font-size: 18px;
+}
+
+/* IMAGEN INFERIOR */
+.imagen-inferior img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.footer__container {
+    background: var(--negro);
+    width: 100%;
+    padding: 40px 0;
+    margin-top: -4px;
+}
+
+.footer {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--blanco, #FFF);
+}
+
+.footer__logo-icon {
+    max-width: 160px;
+    margin-bottom: 16px;
+}
+
+.footer__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer__text-info {
+    color: var(--neutral-c, #F5F5F5);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+}
+
+.footer__social-media-container {
+    text-align: center;
+}
+
+.footer__social-media-text {
+    color: var(--neutral-c, #F5F5F5);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+/* ----- Submenú del Blog ----- */
+.submenu {
+    position: relative;
+}
+
+.submenu__boton {
+    cursor: pointer;
+}
+
+.submenu__lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 0;
+    list-style: none;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 180px;
+    z-index: 999;
+}
+
+.submenu__lista li {
+    padding: 8px 20px;
+}
+
+.submenu__lista li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+}
+
+.submenu__lista li a:hover {
+    background: #f2f2f2;
+}
+
+/* Show on hover */
+.submenu:hover .submenu__lista {
+    display: block;
+}
+@media (max-width: 768px) {
+  .encabezado__container { padding: 16px 0; }
+  .encabezado { flex-direction: column; gap: 16px; height: auto; padding: 0 16px; }
+  .encabezado__logo--icono { max-width: 180px; }
+  .encabezado__navegacion--lista { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .encabezado__navegacion--elemento a { font-size: 18px; }
+}
+@media (max-width: 768px) {
+
+  /* Título "Blog de Japón" más pequeño */
+  .contenedor__img--wrapper::before { 
+      font-size: 18px; /* 🔽 reducido */
+  }
+
+  /* Texto secundario más pequeño */
+  .contenedor__img--wrapper::after { 
+      font-size: 13px; /* 🔽 reducido */
+      line-height: 1.35;
+  }
+
+}
+@media (max-width: 768px) {
+    .contenedor__img[alt="Paisaje de Japón"] {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: scale(1.4);
+        transform-origin: center top;
+    }
+}
+/* --- Ajustes solo para móviles --- */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Tarjetas apiladas verticalmente */
+        gap: 16px;
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 100%;        /* Ocupa todo el ancho del móvil */
+        width: 100%;            /* Fuerza ancho completo */
+        border-radius: 8px;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .card img {
+        width: 100%;            /* Imagen ajustada al ancho */
+        height: auto;           /* Altura proporcional */
+        object-fit: cover;      /* Escala sin deformar */
+        display: block;
+    }
+
+    .card-content {
+        padding: 12px;          /* Menor padding para que quepa en la pantalla */
+    }
+
+    .card-title {
+        font-size: 1rem;        /* Texto más pequeño y legible */
+        margin-bottom: 6px;
+    }
+
+    .card-description {
+        font-size: 0.9rem;      /* Texto más pequeño para caber */
+        line-height: 1.3;       /* Mejor lectura */
+        margin-bottom: 10px;
+    }
+
+    .card-button {
+        padding: 8px 12px;      /* Botón compacto */
+        font-size: 0.9rem;
+        display: inline-block;
+        text-align: center;
+    }
+}
+/* --- Ajustes para móviles --- */
+@media (max-width: 768px) {
+    .testimonios-container {
+        flex-direction: column; /* Apila verticalmente */
+        gap: 16px;
+        padding: 10px;
+    }
+
+    .testimonio {
+        max-width: 100%;   /* Ocupa todo el ancho del móvil */
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .testimonio p {
+        font-size: 0.9rem;   /* Texto más pequeño para caber en pantalla */
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+
+    .usuario img {
+        width: 40px;         /* Imagen más pequeña en móvil */
+        height: 40px;
+    }
+
+    .usuario h4 {
+        font-size: 0.85rem;  /* Nombre más pequeño */
+    }
+
+    .usuario .stars {
+        font-size: 0.8rem;   /* Estrellas más pequeñas */
+    }
+}
+/* Ajustes solo para móviles */
+@media (max-width: 768px) {
+    /* Reducir tamaño de los textos del footer */
+    .footer__text-info,
+    .footer__social-media-text {
+        font-size: 12px; /* Ajusta según prefieras */
+    }
+
+    /* Reducir tamaño del logo del footer */
+    .footer__logo-icon {
+        width: 80px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+    }
+
+    /* Reducir tamaño de los íconos de redes sociales */
+    .footer__social-media-icon {
+        width: 24px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+        margin-right: 8px; /* Opcional: espacio entre íconos */
+    }
+
+    /* Ajuste general del contenedor para no saturar espacio */
+    .footer__container {
+        padding: 12px;
+    }
+}

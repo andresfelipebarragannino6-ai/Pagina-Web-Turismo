@@ -1,0 +1,610 @@
+/* ----- Submenú del Blog ----- */
+.submenu {
+    position: relative;
+}
+
+.submenu__boton {
+    cursor: pointer;
+}
+
+.submenu__lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 0;
+    list-style: none;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 180px;
+    z-index: 999;
+}
+
+.submenu__lista li {
+    padding: 8px 20px;
+}
+
+.submenu__lista li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+}
+
+.submenu__lista li a:hover {
+    background: #f2f2f2;
+}
+
+/* Show on hover */
+.submenu:hover .submenu__lista {
+    display: block;
+}
+/* --- Imagen principal y textos superpuestos --- */
+.contenedor__img--wrapper { 
+    margin: 0;
+    position: relative; /* Necesario para posicionar el texto dentro */
+}
+
+.contenedor__img {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+}
+
+/* Título principal */
+.contenedor__img--wrapper::before {
+    content: "Blog de Colombia";
+    position: absolute;
+    top: 35%; /* Centrado verticalmente */
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    z-index: 10;      /* Asegura que esté al frente de la imagen */
+}
+
+/* Texto secundario */
+.contenedor__img--wrapper::after {
+    content: "Historias de viajes de nuestros\A clientes. ¡Inspírate, encuentra\Aitinerarios y consejos! ¿Cuál es tu\Apróximo destino?";
+    position: absolute;
+    top: calc(35% + 1.4cm); /* Un poco más abajo del título */
+    left: 8%;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    max-width: 550px;
+    text-align: left;
+    white-space: pre-line; /* Respeta los saltos de línea (\A) */
+}
+
+/* Línea roja decorativa */
+.contenedor__img--wrapper .linea-roja {
+    position: absolute;
+    top: calc(35% + 1cm); /* Entre el título y el texto */
+    left: 8%;
+    width: 200px;
+    height: 3px;
+    background-color: #B81515;
+}
+/* --- Sección Bogotá --- */
+.bogota__container {
+    margin-top: 3cm; /* 🔽 Baja todo el bloque Bogotá respecto a la imagen principal */
+}
+
+/* Contenedor conjunto del título y la imagen */
+.bogota__contenido {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 2cm; /* 🔹 Separación entre el título y la imagen */
+    flex-wrap: wrap; /* Responsivo */
+}
+/* ====== Título principal ====== */
+.bogota__titulo {
+  color: var(--grafito, #333);
+  font-size: 29px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 80px;
+}
+/* Línea roja debajo del título */
+.bogota__titulo--subrayado {
+  width: 200px;
+  height: 4px;
+  background-color: red;
+  margin: 0.4cm auto 40px auto; /* separación de 4 cm con el título */
+  border-radius: 2px;
+}
+/* ====== Contenido principal (texto + imagen) ====== */
+.bogota__contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* ====== Texto ====== */
+.bogota__texto {
+  flex: 1;
+}
+
+.bogota__subtitulo {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--grafito, #333);
+}
+.bogota__texto p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+}
+/* ====== Imagen ====== */
+.bogota__imagen--wrapper {
+  flex-shrink: 0;
+  margin-right: -2cm; /* acerca la imagen 2 cm al borde derecho */
+}
+.bogota__imagen {
+  width: 500px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+/* ====== Sección Acomodaciones ====== */
+.bogota__acomodaciones {
+  max-width: 1000px;
+  margin: 60px auto;
+  text-align: left;
+}
+
+/* Contenedor del texto */
+.acomodaciones__contenido {
+  margin-bottom: 20px;
+}
+
+/* Título de la sección */
+.acomodaciones__titulo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--grafito, #333);
+  margin-bottom: 10px;
+}
+
+/* Párrafo descriptivo */
+.acomodaciones__texto {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* Imagen y pie de foto */
+.acomodaciones__imagen--wrapper {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.acomodaciones__imagen {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin-left: -1cm; /* mueve hacia la izquierda */
+}
+
+/* Pie de imagen */
+.acomodaciones__pie {
+  align-self: flex-start; /* alinea el texto al borde izquierdo de la imagen */
+  width: 600px; /* mismo ancho que la imagen */
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  font-style: italic;
+  margin-left: -1cm; /* mueve hacia la izquierda */
+}
+/* ====== Sección Experiencia Bogotá ====== */
+.bogota__experiencia {
+  max-width: 1000px;
+  margin: 80px auto;
+  text-align: left;
+}
+
+.experiencia__contenido {
+  margin-bottom: 20px;
+}
+
+.experiencia__titulo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--grafito, #333);
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.experiencia__texto {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+/* ====== Sección Recomendaciones (solo título y línea roja) ====== */
+.bogota__recomendaciones {
+  max-width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+}
+.recomendaciones__titulo {
+  color: var(--grafito, #333);
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.recomendaciones__subrayado {
+  width: 300px;
+  height: 4px;
+  background-color: red;
+  margin: 0 auto 40px auto;
+  border-radius: 2px;
+}
+/* ====== Estilos de las Tarjetas de Recomendación (Osaka, Hiroshima, Kyoto) ====== */
+
+/* Contenedor principal de las 3 tarjetas */
+.card-container {
+    max-width: 1000px;
+    margin: 1px auto 100px auto; /* Centrar y añadir margen inferior */
+    display: flex;
+    justify-content: space-between; /* Espaciar las tarjetas */
+    gap: 30px; /* Espacio entre tarjetas */
+    flex-wrap: wrap; /* Permitir que las tarjetas se apilen en pantallas pequeñas */
+}
+
+/* Estilos de la tarjeta individual */
+.card {
+    flex: 1; /* Permite que las tarjetas crezcan y ocupen el espacio disponible */
+    min-width: 250px; /* Ancho mínimo para que no se compriman demasiado */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil, aunque no es visible en tu imagen, es una buena práctica */
+    border-radius: 4px;
+    overflow: hidden; /* Asegura que la imagen no se salga de los bordes de la tarjeta */
+    display: flex; /* Para organizar el contenido verticalmente */
+    flex-direction: column;
+}
+
+/* Wrapper de la imagen para control de tamaño */
+.card__imagen-wrapper {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes */
+    overflow: hidden;
+}
+
+.card__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+}
+
+/* Título de la tarjeta (Ciudad) */
+.card__titulo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--grafito, #333);
+    margin: 20px 20px 10px 20px;
+    text-align: left;
+}
+
+/* Párrafo de la tarjeta (Descripción) */
+.card__texto {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 20px 20px 20px;
+    flex-grow: 1; /* Permite que el texto ocupe todo el espacio disponible, empujando el botón hacia abajo */
+    text-align: justify;
+}
+
+/* Botón "Ver detalles" */
+.card__boton {
+    display: block;
+    width: 100%; /* El botón ocupa todo el ancho de la tarjeta */
+    padding: 15px 0;
+    background-color: #B81515; /* Color rojo de la caja */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    /* Los bordes del botón son rectos en la parte inferior de la tarjeta */
+}
+
+.card__boton:hover {
+    background-color: #8f1010; /* Un rojo más oscuro al pasar el ratón */
+}
+.footer__container {
+    background: var(--negro);
+    width: 100%;
+    padding: 40px 0;
+    margin-top: -4px;
+}
+
+.footer {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--blanco, #FFF);
+}
+
+.footer__logo-icon {
+    max-width: 160px;
+    margin-bottom: 16px;
+}
+
+.footer__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer__text-info {
+    color: var(--neutral-c, #F5F5F5);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+}
+
+.footer__social-media-container {
+    text-align: center;
+}
+
+.footer__social-media-text {
+    color: var(--neutral-c, #F5F5F5);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+    .contenedor__img--wrapper::before {
+        font-size: clamp(28px, 6vw, 40px);
+        top: 35%;
+        left: 8%;
+    }
+    .contenedor__img--wrapper::after {
+        font-size: clamp(18px, 4.2vw, 25px);
+        top: calc(35% + 1.4cm);
+        left: 8%;
+        max-width: clamp(280px, 70vw, 550px);
+    }
+    .contenedor__img--wrapper .linea-roja {
+        top: calc(35% + 1cm);
+        left: 8%;
+        width: clamp(140px, 30vw, 200px);
+    }
+    .bogota__contenido {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 16px;
+    }
+    .bogota__imagen--wrapper {
+        margin-right: 0;
+    }
+    .bogota__imagen {
+        width: 100%;
+    }
+    .bogota__acomodaciones {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+    .acomodaciones__imagen {
+        height: auto;
+        margin-left: 0;
+    }
+    .acomodaciones__pie {
+        width: 100%;
+        margin-left: 0;
+    }
+    .bogota__experiencia {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+    .card-container {
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding: 0 16px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .card {
+        min-width: 280px;
+    }
+}
+@media (max-width: 480px) {
+    .contenedor__img--wrapper::after {
+        max-width: 260px;
+    }
+    .card__titulo {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+  .encabezado__container { padding: 16px 0; }
+  .encabezado { flex-direction: column; gap: 16px; height: auto; padding: 0 16px; }
+  .encabezado__logo--icono { max-width: 180px; }
+  .encabezado__navegacion--lista { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .encabezado__navegacion--elemento a { font-size: 18px; }
+
+  .contenedor__img--wrapper::before { font-size: 28px; top: 28%; left: 6%; }
+  .contenedor__img--wrapper::after { font-size: 16px; line-height: 1.4; top: calc(28% + 1.2cm); left: 6%; max-width: 90%; }
+  .contenedor__img--wrapper .linea-roja { top: calc(28% + 0.8cm); left: 6%; width: 140px; }
+
+  .tokio__contenido { flex-direction: column; align-items: center; gap: 16px; max-width: 100%; padding: 0 16px; }
+  .tokio__imagen--wrapper { margin-right: 0; }
+  .tokio__imagen { width: 100%; max-width: 560px; }
+  .tokio__titulo { font-size: 24px; margin-top: 40px; }
+  .tokio__titulo--subrayado { width: 160px; }
+
+  .tokio__acomodaciones { max-width: 100%; margin: 32px auto; padding: 0 16px; }
+  .acomodaciones__imagen { height: 200px; margin-left: 0; }
+  .acomodaciones__pie { width: 100%; margin-left: 0; }
+
+  .tokio__experiencia { max-width: 100%; margin: 40px auto; padding: 0 16px; }
+  .experiencia__titulo { font-size: 18px; }
+  .experiencia__texto { font-size: 14px; line-height: 1.6; }
+
+  .tokio__recomendaciones { max-width: 100%; margin: 48px auto; padding: 0 16px; }
+  .recomendaciones__titulo { font-size: 24px; }
+  .recomendaciones__subrayado { width: 160px; }
+
+  .card-container { flex-direction: column; gap: 16px; max-width: 100%; padding: 0 16px; }
+  .card { min-width: auto; }
+  .card__imagen-wrapper { height: 180px; }
+  .card__titulo { font-size: 20px; }
+  .card__texto { font-size: 14px; }
+
+  .footer { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 16px; }
+  .footer__logo-icon { max-width: 140px; }
+}
+/* Aumentar tamaño de la imagen principal solo en celular */
+@media (max-width: 768px) {
+    .contenedor__img {
+        width: 120%;   /* 🔥 La agranda un poco */
+        max-width: none;
+        margin-left: -10%; /* Centra visualmente al agrandarla */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor__img {
+        width: 135%;   /* 🔥 Más grande en pantallas muy pequeñas */
+        margin-left: -18%; /* Recentrado */
+    }
+}
+@media (max-width: 768px) {
+  .contenedor__img--wrapper .linea-roja { 
+      top: calc(28% + 0.5cm); 
+      left: 6%; 
+      width: 140px; 
+  }
+}
+@media (max-width: 768px) {
+  .contenedor__img--wrapper::after { 
+      top: calc(28% + 0.7cm); /* 🔼 Ahora debajo de la línea roja, separado 0.4cm */
+      left: 6%;
+      font-size: 16px;
+      line-height: 1.4;
+      max-width: 90%;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Título "Blog de Colombia" más pequeño */
+  .contenedor__img--wrapper::before { 
+      font-size: 18px; /* 🔽 reducido */
+  }
+
+  /* Texto secundario más pequeño */
+  .contenedor__img--wrapper::after { 
+      font-size: 12px; /* 🔽 reducido */
+      line-height: 1.35;
+  }
+
+}
+@media (max-width: 768px) {
+    .contenedor__img[alt="Visita al Monserrate"] {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: scale(1.5);
+        transform-origin: center top;
+    }
+}
+@media (max-width: 768px) {
+
+  /* Imagen responsiva y ajustada al móvil */
+  .acomodaciones__imagen {
+      margin-left: -1.05cm;        /* sigue movida 0.4 cm a la izquierda */
+      width: calc(100% + 0.4cm);  /* evita recorte */
+      transform: scale(1.09);     /* 🔍 agranda la imagen un poco */
+      transform-origin: center;   /* mantiene el centro al escalar */
+      display: block;
+  }
+
+  .acomodaciones__imagen {
+      width: 100%;
+      height: auto;
+      display: block;
+  }
+
+  /* Ubicar el texto debajo de la imagen (figcaption) */
+  .acomodaciones__pie {
+      margin-top: 0.4cm;     /* ✔ ya lo teníamos: debajo de la imagen */
+      margin-left: -0.6cm;   /* ✔ nuevo: mover 1 cm a la izquierda */
+      font-size: 14px;     /* ✔ tamaño reducido en móvil */
+      text-align: left;    /* ✔ acompaña el desplazamiento */
+      padding: 0 12px;
+      line-height: 1.35;
+  }
+
+}
+/* SOLO MÓVIL */
+@media (max-width: 768px) {
+  .bogota__imagen--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .bogota__imagen {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    left: -1cm; /* 🔥 Mueve la imagen 1 cm a la izquierda */
+  }
+}
+/* Ajustes solo para móviles */
+@media (max-width: 768px) {
+    /* Reducir tamaño de los textos del footer */
+    .footer__text-info,
+    .footer__social-media-text {
+        font-size: 12px; /* Ajusta según prefieras */
+    }
+
+    /* Reducir tamaño del logo del footer */
+    .footer__logo-icon {
+        width: 80px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+    }
+
+    /* Reducir tamaño de los íconos de redes sociales */
+    .footer__social-media-icon {
+        width: 24px;  /* Ajusta según prefieras */
+        height: auto; /* Mantiene proporción */
+        margin-right: 8px; /* Opcional: espacio entre íconos */
+    }
+
+    /* Ajuste general del contenedor para no saturar espacio */
+    .footer__container {
+        padding: 12px;
+    }
+}
